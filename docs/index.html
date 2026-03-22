@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Weather Poem</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #e8f4f8;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    header p.subtitle {
+      margin-top: 0.4rem;
+      color: #90caf9;
+      font-size: 0.95rem;
+    }
+
+    /* ── Weather cards ─────────────────────────────────────────────────────── */
+    .section-title {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #90caf9;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      max-width: 960px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card .date {
+      font-size: 0.78rem;
+      color: #90caf9;
+      margin-bottom: 1rem;
+    }
+
+    .card table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .card table tr td {
+      padding: 0.3rem 0;
+    }
+
+    .card table tr td:first-child {
+      color: #b0bec5;
+      width: 60%;
+    }
+
+    .card table tr td:last-child {
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* ── Poem block ────────────────────────────────────────────────────────── */
+    .poem-wrapper {
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 2.2rem 2.4rem;
+      backdrop-filter: blur(6px);
+      line-height: 1.9;
+      font-size: 1.05rem;
+    }
+
+    .poem-wrapper p {
+      margin-bottom: 1.2rem;
+    }
+
+    .poem-wrapper p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #78909c;
+      margin-top: 2rem;
+    }
+
+    .no-data {
+      text-align: center;
+      color: #78909c;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌦️ Daily Weather Poem</h1>
+    <p class="subtitle">Aalborg · Beijing · Nanning — updated automatically every day</p>
+  </header>
+
+  <!-- Weather summary cards -->
+  <p class="section-title">Tomorrow's Forecast</p>
+  <div class="cards-grid">
+    
+        <div class="card">
+          <h3>Aalborg 🇩🇰</h3>
+          <p class="date">2026-03-22 23:00:00</p>
+          <table>
+            <tr><td>🌡️ Temperature</td><td>3.6545000076293945 °C</td></tr>
+            <tr><td>🌧️ Rain probability</td><td>0.0 %</td></tr>
+            <tr><td>💧 Precipitation</td><td>0.0 mm</td></tr>
+            <tr><td>💨 Wind speed</td><td>9.0 km/h</td></tr>
+            <tr><td>☁️ Cloud cover</td><td>88.0 %</td></tr>
+            <tr><td>💦 Humidity</td><td>97.0 %</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>Beijing 🇨🇳</h3>
+          <p class="date">2026-03-22 23:00:00</p>
+          <table>
+            <tr><td>🌡️ Temperature</td><td>9.440999984741211 °C</td></tr>
+            <tr><td>🌧️ Rain probability</td><td>0.0 %</td></tr>
+            <tr><td>💧 Precipitation</td><td>0.0 mm</td></tr>
+            <tr><td>💨 Wind speed</td><td>2.1897945404052734 km/h</td></tr>
+            <tr><td>☁️ Cloud cover</td><td>100.0 %</td></tr>
+            <tr><td>💦 Humidity</td><td>77.0 %</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>Nanning 🇨🇳</h3>
+          <p class="date">2026-03-22 23:00:00</p>
+          <table>
+            <tr><td>🌡️ Temperature</td><td>20.638999938964844 °C</td></tr>
+            <tr><td>🌧️ Rain probability</td><td>0.0 %</td></tr>
+            <tr><td>💧 Precipitation</td><td>0.0 mm</td></tr>
+            <tr><td>💨 Wind speed</td><td>5.9044389724731445 km/h</td></tr>
+            <tr><td>☁️ Cloud cover</td><td>86.0 %</td></tr>
+            <tr><td>💦 Humidity</td><td>91.0 %</td></tr>
+          </table>
+        </div>
+  </div>
+
+  <!-- Bilingual poem -->
+  <p class="section-title">Today's Poem</p>
+  <div class="poem-wrapper">
+    <p>🌍 English<br>In Aalborg's chill, the winds do bite,<br>A mere 3 degrees, a winter's night.<br>Beijing's veil of clouds, a greyish hue,<br>Conceals the sun, with nary a clue.<br>But Nanning's warmth, a gentle breeze,<br>Invites the heart, to sunny trees.<br>With twenty degrees, and a cloudless sky,<br>It's the perfect haven, to watch the world go by.<br>The humidity's high, but the rain's at bay,<br>Nanning's the gem, to spend the day.</p><p>🌏 中文<br>丹麦奥尔堡寒风刺骨，<br>仅三度的寒冷冬夜。<br>北京的云雾灰蒙蒙，<br>遮蔽了阳光，没有任何迹象。<br>但南宁的温暖轻轻地呼唤，<br>邀请心灵到阳光树下。<br>二十度的温度和晴朗的天空，<br>是观看世界的完美避风港。<br>湿度很高，但雨水远去，<br>南宁是明天度过一天的宝藏。</p>
+  </div>
+
+  <footer>
+    Last generated: 2026-03-22 16:08 UTC &nbsp;·&nbsp;
+    Powered by <a href="https://open-meteo.com" style="color:#90caf9">Open-Meteo</a>
+    &amp; <a href="https://groq.com" style="color:#90caf9">Groq</a>
+  </footer>
+
+</body>
+</html>
